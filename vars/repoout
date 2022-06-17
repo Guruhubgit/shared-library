@@ -2,11 +2,12 @@ def call (String git_repo_url="", String git_cred="", String branch="")
 
 {
     echo "Cloning started "
-
+    
+    toolkitrepo_git_status = bat(returnStdout: true, script:""" 
     checkout(
-                [$class: 'GitSCM', branches: [[name: */master]],
+                [$class: 'GitSCM', branches: [[name: '*/$git_branch']],
                  userRemoteConfigs: [[credentialsId: '$git_cred',url: '$git_repo_url']]],
 
-        )
+        )"""
 }
 
