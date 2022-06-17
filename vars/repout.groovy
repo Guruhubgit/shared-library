@@ -1,4 +1,4 @@
-def call(String git_repo_url="", String CredentialId=""){
+def call(String git_repo_url, String CredentialId){
     echo "Cloning started"
      checkout(
                 [$class: 'GitSCM', branches: [[name: '*/master']],
