@@ -9,4 +9,3 @@ def call (String git_repo_url="", String git_cred="", String branch="")
 
         )
 }
-
