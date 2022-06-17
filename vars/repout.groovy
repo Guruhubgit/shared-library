@@ -5,7 +5,7 @@ def call(String git_repo_url="", String git_cred="")
     
     bat """
     checkout(
-                [$class: 'GitSCM', branches: [[name: '*/master']],
+                [class: 'GitSCM', branches: [[name: '*/master']],
                  userRemoteConfigs: [[credentialsId: '$git_cred',url: '$git_repo_url']]],
 
         )"""
