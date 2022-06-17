@@ -1,7 +1,7 @@
-def call(def giturl, def branch ){
+def call(def giturl, def branch, def user){
     echo "Cloning started"
      checkout(
                 [$class: 'GitSCM', branches: [[name: '*/branch']],
-                 userRemoteConfigs: [[url: 'giturl']]],
+                 userRemoteConfigs: [[credentialsId:'user', url: 'giturl']]],
      )
 }
